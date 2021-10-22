@@ -1,0 +1,12 @@
+# Upgrade zombie based on number of kills
+
+# level 0
+# execute as @s run give @s zombie_head{display:{Name:'[{"text":"Zombie Head","italic":false}]'},AttributeModifiers:[{AttributeName:"generic.attack_damage",Amount:4,Operation:0,UUID:[I;-121015,8425,232735,-16850],Slot:head,Name:"generic.attack_damage"},{AttributeName:"generic.movement_speed",Amount:0.2,Operation:1,UUID:[I;-121015,8425,232735,-16850],Slot:head,Name:"generic.movement_speed"},{AttributeName:"generic.max_health",Amount:20,Operation:0,UUID:[I;-121015,8425,232735,-16850],Slot:head,Name:"generic.max_health"},{AttributeName:"generic.attack_speed",Amount:20,Operation:0,UUID:[I;-121015,30896,234243,-61792],Slot:head,Name:"generic.attack_speed"}]} 1
+
+# execute as @s[scores={PKilledAsZombie=1..}] run clear
+
+# level 1
+# zombie_head{display:{Name:'[{"text":"Zombie Head +1","italic":false}]'},AttributeModifiers:[{AttributeName:"generic.attack_damage",Amount:4.5,Operation:0,UUID:[I;-121015,15679,233136,-31358],Slot:head,Name:"generic.attack_damage"},{AttributeName:"generic.movement_speed",Amount:0.25,Operation:1,UUID:[I;-121015,15679,233136,-31358],Slot:head,Name:"generic.movement_speed"},{AttributeName:"generic.max_health",Amount:30,Operation:0,UUID:[I;-121015,15679,233136,-31358],Slot:head,Name:"generic.max_health"},{AttributeName:"generic.armor",Amount:3,Operation:0,UUID:[I;-121015,15679,233136,-31358],Slot:head,Name:"generic.armor"},{AttributeName:"generic.attack_speed",Amount:20,Operation:0,UUID:[I;-121015,30896,234243,-61792],Slot:head,Name:"generic.attack_speed"}]} 1
+
+# level 2
+# zombie_head{display:{Name:'[{"text":"Zombie Head +2","italic":false}]'},AttributeModifiers:[{AttributeName:"generic.attack_damage",Amount:5,Operation:0,UUID:[I;-121015,10355,23348,-20710],Slot:head,Name:"generic.attack_damage"},{AttributeName:"generic.movement_speed",Amount:0.3,Operation:1,UUID:[I;-121015,10355,23348,-20710],Slot:head,Name:"generic.movement_speed"},{AttributeName:"generic.max_health",Amount:40,Operation:0,UUID:[I;-121015,10355,23348,-20710],Slot:head,Name:"generic.max_health"},{AttributeName:"generic.armor",Amount:5,Operation:0,UUID:[I;-121015,10355,23348,-20710],Slot:head,Name:"generic.armor"},{AttributeName:"generic.attack_speed",Amount:20,Operation:0,UUID:[I;-121015,30896,234243,-61792],Slot:head,Name:"generic.attack_speed"}]} 1
