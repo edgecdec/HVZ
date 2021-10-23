@@ -1,18 +1,18 @@
 mWepsBlasterName,displayName,minecraftToolName,speed,ammoStacks,armor,arrowType,tagName,weaponType,lore
-Strongarm,Strongarm,stone_hoe,12,0,0,r,strongarm,s,"A nerf pistol with a steady rate of fire and moderate damage. Easy to handle, easy to move with; a great choice for anyone."
-Magnus,Magnus,golden_shovel,7,0,0,s,magnus,s,"Mega dart pistol that deals heavy damage and pierces through zombies. Deadly at medium range, though it takes some skill to handle. Mega darts stun their target briefly."
+Strongarm,Strongarm,scute{CustomModelData:2},12,0,0,r,strongarm,s,"A nerf pistol with a steady rate of fire and moderate damage. Easy to handle, easy to move with; a great choice for anyone."
+Magnus,Magnus,scute{CustomModelData:9},7,0,0,s,magnus,s,"Mega dart pistol that deals heavy damage and pierces through zombies. Deadly at medium range, though it takes some skill to handle. Mega darts stun their target briefly."
 Talon,Talon,golden_hoe,20,0,0,s,talon,s,"A compact Mega dart pistol. Deals high damage and can be reloaded quickly. Its small size makes it very easy to run with, but very inaccurate. Mega darts stun their target briefly."
-Roughcut,Roughcut,stone_axe,5,2.5,0,r,roughcut,p,"Pump action shotgun that fires several darts at once. Annihilates zombies up close, and remains reliable at medium range."
+Roughcut,Roughcut,scute{CustomModelData:5},5,2.5,0,r,roughcut,p,"Pump action shotgun that fires several darts at once. Annihilates zombies up close, and remains reliable at medium range."
 Barrel-Break,Barrel Break,wooden_hoe,16,0,0,r,barrelBreak,s,Lightweight double barrel shotgun that hits extremely hard. Shreds through zombies at point blank range; excellent for aggressive hit and run maneuvers. Not suited for range.
 DoubleBreach,DoubleBreach,golden_axe,0,2,0,s,doubleBreach,p,"Mega dart slug shotgun that can pulverize zombies at medium range. Accurate, but somewhat heavy and cumbersome to wield. Mega darts stun their target briefly."
-Rampage,Rampage,stone_sword,-8,4,0,r,rampage,p,Steady rapid fire blaster that remains accurate at long ranges. Ideal for those who want consistency from a distance.
-Stampede,Stampede,wooden_sword,-25,5,4,r,stampede,p,"Powerful full auto blaster with a high rate of fire. Deals high damage, but extremely heavy. Front-mounted shield provides protection at the cost of accuracy."
-Retaliator,Retaliator,stone_pickaxe,-15,2.5,0,r,retaliator,p,Highly accurate marksman rifle with an extended barrel for long range combat. Moderate fire rate allows for quick follow up shots.
-Longshot,Longshot,wooden_shovel,-20,3,0,r,longshot,p,"Powerful sniper rifle that tears through zombies at extreme ranges. Pinpoint accuracy and incredible damage, but not very mobile."
-Hammershot,Hammershot,iron_hoe,16,0,0,r,hammershot,s,"Slower but fairly hard hitting pistol.  Zombiestrike darts inflict Wither on zombies, dealing damage over time."
+Rampage,Rampage,scute{CustomModelData:8},-8,4,0,r,rampage,p,Steady rapid fire blaster that remains accurate at long ranges. Ideal for those who want consistency from a distance.
+Stampede,Stampede,scute{CustomModelData:7},-25,5,4,r,stampede,p,"Powerful full auto blaster with a high rate of fire. Deals high damage, but extremely heavy. Front-mounted shield provides protection at the cost of accuracy."
+Retaliator,Retaliator,scute{CustomModelData:3},-15,2.5,0,r,retaliator,p,Highly accurate marksman rifle with an extended barrel for long range combat. Moderate fire rate allows for quick follow up shots.
+Longshot,Longshot,scute{CustomModelData:10},-20,3,0,r,longshot,p,"Powerful sniper rifle that tears through zombies at extreme ranges. Pinpoint accuracy and incredible damage, but not very mobile."
+Hammershot,Hammershot,scute{CustomModelData:1},16,0,0,r,hammershot,s,"Slower but fairly hard hitting pistol.  Zombiestrike darts inflict Wither on zombies, dealing damage over time."
 Slingfire,Slingfire,iron_shovel,-6,2.5,0,r,slingfire,p,"Reliable marksman rifle that excels at taking down armored zombies. Shorter barrel increases mobility at the cost of range. Zombiestrike darts inflict Wither on zombies, dealing extra damage over time."
 Mediator,Mediator,iron_pickaxe,-8,3.5,0,r,mediator,p,Two-in-one blaster that can be used in full auto or as a semi-auto shotgun. Different firing modes allow for great versatility.
-Centurion,Centurion,diamond_shovel,-25,2.5,0,s,centurion,p,"High caliber sniper rifle that vaporizes everything in its path. If it’s still alive afterwards, it won’t be moving for a long time. Mega darts stun their target briefly."
+Centurion,Centurion,scute{CustomModelData:6},-25,2.5,0,s,centurion,p,"High caliber sniper rifle that vaporizes everything in its path. If it’s still alive afterwards, it won’t be moving for a long time. Mega darts stun their target briefly."
 Vulcan,Vulcan,diamond_sword,-30,4.5,0,r,vulcan,p,"Belt-fed blaster with an immense rate of fire. Deals unrivaled damage but lacks accuracy. Darts pierce through zombies, annihilating crowds with ease."
 Revoltinator,Revoltinator,iron_sword,-16,4,0,r,revoltinator,p,"Unique heavy full auto blaster. Darts travel quickly and pierce through targets. Very stable when firing. Zombiestrike darts inflict Wither on zombies, dealing extra damage over time."
 Sledgefire,Sledgefire,iron_axe,-2,3,0,r,sledgefire,p,"Long range pump shotgun with great stability. Fires slowly, but guaranteed to destroy whatever it hits. Zombiestrike darts inflict Wither on zombies, dealing extra damage over time."
@@ -20,7 +20,7 @@ Motostryke,Motostryke,golden_pickaxe,-12,4,0,s,motostryke,p,"Full auto Mega dart
 Cycloneshock,Cycloneshock,golden_sword,5,0,0,s,cycloneshock,s,"Large Mega dart pistol with a moderate rate of fire. Excellent for providing support and holding back crowds of zombies, though not incredibly accurate. Mega darts stun their target briefly."
 Fortnite-SPL,Fortnite SPL,bone,22,0,0,r,fortniteSPL,s,Lightweight pistol with great range and accuracy. Silencer conceals position when firing. Extremely easy to move with.
 Alpha-Trooper,Alpha Trooper,netherite_pickaxe,-10,3,0,r,alphaTrooper,p,"Highly reliable long range rifle. Uses ammo very efficiently, and darts are always on target. Accustrike darts weaken zombies, making them do less damage."
-Stryfe,Stryfe,netherite_hoe,4,0,0,r,stryfe,s,"Close range full auto blaster with extreme damage output. Removed stock sacrifices accuracy for greater mobility. Accustrike darts weaken zombies, making them do less damage."
+Stryfe,Stryfe,scute{CustomModelData:4},4,0,0,r,stryfe,s,"Close range full auto blaster with extreme damage output. Removed stock sacrifices accuracy for greater mobility. Accustrike darts weaken zombies, making them do less damage."
 Demolisher,Demolisher,netherite_shovel,-13,4,0,r,demolisher,p,"Reliable full auto blaster with an underbarrel grenade launcher. Grenades do high damage to crowds of zombies. Accustrike darts weaken zombies, making them do less damage."
 Nexus-Pro,Nexus Pro,music_disc_ward,-15,3,0,r,nexusPro,p,Long range rifle with extremely high dart velocity. Can use both regular and Mega darts. Can pierce through dozens of zombies.
 Aeon-Pro,Aeon Pro,music_disc_wait,10,0,0,r,aeonPro,s,"The Nexus Pros little brother, offering similar power in a smaller package. Compact size offers mobility, but sacrifices accuracy and reload speed. "
