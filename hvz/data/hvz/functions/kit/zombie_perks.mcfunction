@@ -15,7 +15,7 @@ execute as @p if entity @s[team=HVZZombie,tag=perkHealth] run effect give @p min
 execute as @p if entity @s[team=HVZZombie,tag=perkSwift] run effect give @p minecraft:speed 1000000 0 true
 execute as @p if entity @s[team=HVZZombie,tag=perkSwift] run effect give @p minecraft:jump_boost 1000000 0 true
 
-execute as @p if entity @s[team=HVZZombie,tag=perkRock] run replaceitem entity @p armor.legs leather_leggings{display:{"color":1640448,Name:'[{"text":"Invincible Athletic Pants"}]'},Unbreakable:1,AttributeModifiers:[{AttributeName:"generic.knockback_resistance",Name:"generic.knockback_resistance",Slot:"legs",Amount:1,Operation:1,UUID:[I;1007165276,1025448352,1007673513,1540559398]}]} 
+execute as @p if entity @s[team=HVZZombie,tag=perkRock] run item replace entity @p armor.legs leather_leggings{display:{"color":1640448,Name:'[{"text":"Invincible Athletic Pants"}]'},Unbreakable:1,AttributeModifiers:[{AttributeName:"generic.knockback_resistance",Name:"generic.knockback_resistance",Slot:"legs",Amount:1,Operation:1,UUID:[I;1007165276,1025448352,1007673513,1540559398]}]}
 
 execute as @p if entity @s[team=HVZZombie,tag=perkRegen] run effect give @p minecraft:regeneration 1000000 2 true
 
