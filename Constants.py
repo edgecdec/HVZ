@@ -1,0 +1,5 @@
+DEFAULT_ATTACK_DAMAGE = 2
+
+BASE_FILE_PATH = "hvz/data/hvz/functions/"
+KIT_FILE_PATH = f"{BASE_FILE_PATH}kit/"
+CONTROL_FILE_PATH = f"{BASE_FILE_PATH}control/"
