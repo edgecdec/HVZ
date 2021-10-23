@@ -1,4 +1,4 @@
-from ParseStrings import *
+from Util import *
 from Constants import *
 
 def createPrimaryWeaponString(weaponData):

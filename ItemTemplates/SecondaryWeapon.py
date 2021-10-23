@@ -1,10 +1,9 @@
-from ParseStrings import *
+from Util import *
 from Constants import *
 
 
 def createSecondaryWeaponString(curData):
-    commandStr = ""
-    commandStr += f'execute as @p if entity @s[team=HVZHuman,tag={curData["tagName"]}] '
+    commandStr = f'execute as @p if entity @s[team=HVZHuman,tag={curData["tagName"]}] '
     commandStr += f"run give @p {curData['minecraftToolName']}"
     commandStr += f'{{Unbreakable:1, PublicBukkitValues: {{"mweps:mweps": "{curData["mWepsBlasterName"]}"}}, '
     commandStr += f"display: {{Name: {{\"extra\":[{{\"text\":\"{curData['displayName']}\"}}],\"text\":\"\"}}}},"

@@ -1,15 +1,9 @@
 import csv
-from ParseStrings import *
+from Util import *
 from Constants import *
 from ItemTemplates.PrimaryWeapon import *
 from ItemTemplates.SecondaryWeapon import *
-
-
-def getArrowName(val):
-    if(val == 's'):
-        return 'spectral_arrow'
-    else:
-        return 'arrow'
+from ItemTemplates.Ammo import *
 
 data = []
 with open('HVZWeaponInfo.csv') as f:
@@ -39,13 +33,8 @@ with open(f'{KIT_FILE_PATH}code_generated_kit_logic.mcfunction', 'w') as kitOutf
             commandStr += createSecondaryWeaponString(curData)
 
         if round(float(curData['ammoStacks'])) > 0:
-            commandStr += 'execute as @p if entity @s[team=HVZHuman,tag=' + \
-                          curData['tagName'] + \
-                          '] run give @p ' + \
-                          getArrowName(curData['arrowType']) + \
-                          ' ' + \
-                          str(round(float(curData['ammoStacks']) * 64)) + \
-                          '\n'
+            commandStr += createAmmoString(curData)
+
 
         commandStr += '\n'
         kitOutfile.write(commandStr)
