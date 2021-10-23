@@ -1,6 +1,4 @@
 import csv
-from Util import *
-from Constants import *
 from ItemTemplates.PrimaryWeapon import *
 from ItemTemplates.SecondaryWeapon import *
 from ItemTemplates.Ammo import *
@@ -23,7 +21,7 @@ with open(f'{KIT_FILE_PATH}code_generated_kit_logic.mcfunction', 'w') as kitOutf
         isPrimaryWeapon = curData['weaponType'] == 'p'
 
         # print(curData)
-        commandStr = '# ' + curData['displayName'] + '\n'
+        commandStr = f"# {curData['displayName']}\n"
 
         curData['lore'] = curData['lore'].replace('\'', '')
 
@@ -40,19 +38,19 @@ with open(f'{KIT_FILE_PATH}code_generated_kit_logic.mcfunction', 'w') as kitOutf
         kitOutfile.write(commandStr)
 
         fileText = "# add tag\n"
-        if isPrimaryWeapon:
-            fileText += "execute as @p run function hvz:kit/remove_code_generated_tags_primary\n\n"
-        else:
-            fileText += "execute as @p run function hvz:kit/remove_code_generated_tags_secondary\n\n"
-        fileText += "tag @p add " + curData['tagName'] + "\n\n"
+
+        filePathPrimarySecondary = "primary"
+        if not isPrimaryWeapon:
+            filePathPrimarySecondary = "secondary"
+
+        fileText += f"execute as @p run function hvz:kit/remove_code_generated_tags_{filePathPrimarySecondary}\n\n"
+        fileText += f"tag @p add {curData['tagName']}\n\n"
         fileText += "# call human kit\n"
         fileText += "function hvz:kit/human"
 
-        curFileName = ''
-        if isPrimaryWeapon:
-            curFileName = 'human_kits/primary/human_' + str.lower(curData['tagName']) + '.mcfunction'
-        else:
-            curFileName = 'human_kits/secondary/human_' + str.lower(curData['tagName']) + '.mcfunction'
+        tagNameLower = str.lower(curData["tagName"])
+        curFileName = f'human_kits/{filePathPrimarySecondary}/human_{tagNameLower}.mcfunction'
+
         with open(f'{KIT_FILE_PATH}{curFileName}', 'w') as curOutfile:
             curOutfile.write(fileText)
 
@@ -70,7 +68,7 @@ with open(f"{KIT_FILE_PATH}remove_code_generated_tags_primary.mcfunction", 'w') 
     print("Adding primary tags to be removed...")
     curOutfile.write("# remove primary tags generated from python script\n")
     for tag in tagListPrimary:
-        curStr = "tag @s remove " + tag + "\n"
+        curStr = f"tag @s remove {tag}\n"
         curOutfile.write(curStr)
 
     curOutfile.write("\n# remove melee tags\n")
@@ -80,7 +78,7 @@ with open(f"{KIT_FILE_PATH}remove_code_generated_tags_secondary.mcfunction", 'w'
     print("Adding secondary tags to be removed...")
     curOutfile.write("# remove secondary tags generated from python script\n")
     for tag in tagListSecondary:
-        curStr = "tag @s remove " + tag + "\n"
+        curStr = f"tag @s remove {tag}\n"
         curOutfile.write(curStr)
 
     curOutfile.write("\n# remove melee tags\n")
