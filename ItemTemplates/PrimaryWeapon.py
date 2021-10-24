@@ -3,7 +3,8 @@ from Constants import *
 
 def createPrimaryWeaponString(weaponData):
     commandStr = f"execute as @p if entity @s[team=HVZHuman,tag={weaponData['tagName']}] "
-    commandStr += 'run item replace entity @p armor.head minecraft:leather_helmet{Unbreakable:1,AttributeModifiers:[{AttributeName:"generic.movement_speed",Name:"generic.movement_speed",Slot:"head",Amount:'
+    commandStr += 'run item replace entity @p armor.head with minecraft:leather_helmet{Unbreakable:1,'
+    commandStr += 'AttributeModifiers:[{AttributeName:"generic.movement_speed",Name:"generic.movement_speed",Slot:"head",Amount:'
     commandStr += f"{str(round(float(weaponData['speed']) * .01, 2))}"
     commandStr += ',Operation:1,UUID:[I;1009794932,1066661964,1014042860,1605916940]},'
     commandStr += '{AttributeName:"generic.armor",Name:"generic.armor",Slot:"head",Amount:2,Operation:0,UUID:[I;1009794932,1066661964,1014042860,1605916940]},'
@@ -12,7 +13,7 @@ def createPrimaryWeaponString(weaponData):
 
     commandStr += f"execute as @p if entity @s[team=HVZHuman,tag={weaponData['tagName']}] "
     commandStr += f"run give @p {weaponData['minecraftToolName']}"
-    commandStr += f'{{Unbreakable:1, PublicBukkitValues: {{"mweps:mweps": "{weaponData["mWepsBlasterName"]}"}},'
+    commandStr += f'{{Unbreakable:1, {getCustomModelData(weaponData)}PublicBukkitValues: {{"mweps:mweps": "{weaponData["mWepsBlasterName"]}"}},'
     commandStr += f'display: {{Name: {{"extra":[{{"text":"{weaponData["displayName"]}"}}],"text":""}},'
     commandStr += f"Lore:[{putStringOnMultipleLines(weaponData['lore'])}]}}, "
     commandStr += f'AttributeModifiers:[{{AttributeName: "generic.armor", Amount: {str(weaponData["armor"])}'
