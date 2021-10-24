@@ -18,3 +18,11 @@ def getArrowName(val):
         return 'spectral_arrow'
     else:
         return 'arrow'
+
+def getCustomModelData(weaponData):
+    tool = weaponData['minecraftToolName']
+    print(tool)
+    if tool == "scute":
+        return f"CustomModelData:{weaponData['customModelData']}, "
+    else:
+        return ""
