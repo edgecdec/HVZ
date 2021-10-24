@@ -5,9 +5,7 @@ from Constants import *
 def createSecondaryWeaponString(weaponData):
     commandStr = f'execute as @p if entity @s[team=HVZHuman,tag={weaponData["tagName"]}] '
     commandStr += f"run give @p {weaponData['minecraftToolName']}"
-    customModelData = getCustomModelData(weaponData)
-    print(customModelData)
-    commandStr += f'{{Unbreakable:1, {customModelData}PublicBukkitValues: {{"mweps:mweps": "{weaponData["mWepsBlasterName"]}"}}, '
+    commandStr += f'{{Unbreakable:1, {getCustomModelData(weaponData)}PublicBukkitValues: {{"mweps:mweps": "{weaponData["mWepsBlasterName"]}"}}, '
     commandStr += f"display: {{Name: {{\"extra\":[{{\"text\":\"{weaponData['displayName']}\"}}],\"text\":\"\"}}}},"
 
     commandStr += f"Lore:[{putStringOnMultipleLines(weaponData['lore'])}],"
