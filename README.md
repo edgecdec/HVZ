@@ -1,3 +1,2 @@
 # HVZ
 HVZ datapack
-# test
