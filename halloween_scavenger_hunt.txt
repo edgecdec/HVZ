@@ -14,29 +14,22 @@ Areas
 
     This part of the scavenger hunt basically follows the story of a student who went missing and was last seen at the HUB pumpkin patch.  When the players join the scavenger hunt they should be given a book that hints they should go there to find out what happened.
     This will lead to a series of clues that need to be completed in order (check for previous tag to get the next one), and each one should decrement the player's score by 1.
-
-    Book code:
-    /give @p written_book{pages:['{"text":"09/28/21\n\nOur Love Forever \n\nWearing; White blouse and a satin tan skirt. Hair is in a ponytail, wore too much mascara. \nWhen I came across your work, I surprisingly saw you there. You're not usually there on Sundays. "}','{"text":"You told me that you had forgotten the paperwork from last meeting. You did notice my haircut, though. I'm surprised. Out of all the people, you complimented me. Do you secretly admire me? I bought this small cottage on the outskirts of town, because I know we can have a beautiful life together."}','{"text":" I can already see it.You cooking for me, making me my favorite food. We would be dancing by the water fountain playing my favorite song. You shouldn't be living in that crappy apartment anyways. When will you acknowledge that we're meant to be? I drive 3 hours just to see you. You're making me impatient, "}','{"text":"but I know it'll be worth it. "}'],title:"Book 1",author:Ted}
+        Book code:
+            give @p written_book{pages:['{"text":"09/28/21\n\nOur Love Forever \n\nWearing; White blouse and a satin tan skirt. Hair is in a ponytail, wore too much mascara. \nWhen I came across your work, I surprisingly saw you there. You're not usually there on Sundays. "}','{"text":"You told me that you had forgotten the paperwork from last meeting. You did notice my haircut, though. I'm surprised. Out of all the people, you complimented me. Do you secretly admire me? I bought this small cottage on the outskirts of town, because I know we can have a beautiful life together."}','{"text":" I can already see it.You cooking for me, making me my favorite food. We would be dancing by the water fountain playing my favorite song. You shouldn't be living in that crappy apartment anyways. When will you acknowledge that we're meant to be? I drive 3 hours just to see you. You're making me impatient, "}','{"text":"but I know it'll be worth it. "}'],title:"Book 1",author:Ted}
 
     Clue #1: hidden inside the cottage loft.  Gives a book with clues hinting at Clue #2
-
-    Book code:
-    WIP
+        Book code:
+            give @p written_book{pages:['{"text":"10/24/21\\n\\nWhy Wont You Notice mE?\\n\\nWearing: black off-the-shoulder top, black pants, gold jewelry, hair is curled, a hint of brown eyeshadow.\\n\\nI gave you a compliment but you didn\'t hear me. that made me angry. very \\n\\n "}','{"text":"very very very very very very VerY vErY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY angry."}','{"text":"But then I had a whiff of you. You bought a new perfume, which suits you way better than that crappy cheap perfume your boy....boy-friend got. Don\'t worry, I already have my plans to get rid of him. He doesn\'t deserve you at all. Would he have made a room dedicated to you? no, but I did. "}','["",{"text":"I made it under the water fountain because you like romantic gestures","color":"dark_red"},{"text":". I remember small details like that unlike him. I can\'t wait for you to see it. It\'ll be a wonderful surprise.","color":"reset"}]'],title:"Book 2",author:Ted}
 
     Clue #2: hidden under the fountain behind the cottage.  Gives a note with clues hinting at Clue #3 and a key (tripwire?) to the basement.
-
-    Book code:
-    WIP
+        Book code:
+            give @p written_book{pages:['{"text":"10/28/21\\n\\nWearing: White cashmere sweater, blue jeans, white sneakers. Hair down, no makeup.\\n\\nI took you to the fountain, hoping you would love what I did for you. You didn\'t seem happy. I could see the fear in your eyes. Why are you scared of me? "}','{"text":"You liked my hair. You\'re in love with me. Can\'t you see how devoted I am to you? I even took the time to get rid of your so-called EX boyfriend. \\n\\nYou tried to run away, so I had to knock you out :( but dont worry, I made sure not to make not even a scratch on your beautiful face. "}','["",{"text":"If you didn\'t like the place I made for you,"},{"text":" I have no choice but to put you in the cellar","color":"dark_red"},{"text":". It\'s not as nice, but you\'re going to love it.\\n\\n\\n\\n\\n\\n\\n\\nYou\'re going to love me.","color":"reset"}]'],title:"Book 3",author:Ted}
 
     Clue #3: a button leading into the basement.  The button will teleport the player to the opposite end of the basement, and give them blindess and slowness for 10 seconds.  In the middle of the basement, a SERIAL KILLER will spawn, which is optional
     to kill.  There will be a pressure plate that will open the iron door allowing the player to escape and also enable them to get the final clue
-
-    Book code:
-    WIP
+        Book code:
+            give @p written_book{pages:['{"text":"10/31/21 \\n\\n\\nYOU GAVE ME NO CHOICE. \\n "}','{"text":"WHY DID YOU TRY TO LEAVE? YOU JUST HAD TO ESCAPE THE PLACE I MADE FOR YOU. WE COULD\'VE BEEN HAPPY. WHY WHY WHY WHY WHY WHY WHY WHY WHY WHY WHY WHY WHY WHY WHY WHY WHY WHY\\nWHY WHY WHY WHY WHY WHY WHY WHY WHY\\nWHY WHY WHY WHY WHY WHY WHY WHY WHY\\nWHY WHY WHY WHY WHY WHY WHY WHY WHYWHY \\n\\n\\n "}','{"text":"It\'s okay. Regardless, this is a way for us to be together forever. You\'ll always be with me. Forever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever and ever... "}'],title:"Book 4",author:Ted}
 
     Clue #4: a button on the gravestone behind the cottage.  When the player clicks it they should get a player head as the final clue.
-
-    Player head code:
-    /give @p minecraft:player_head{SkullOwner:lotusMMI} 1
-
-
+         Player head code:
+            give @p minecraft:player_head{SkullOwner:lotusMMI} 1
