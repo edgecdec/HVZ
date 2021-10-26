@@ -33,8 +33,8 @@ Areas
 			+1
 	Clue #3: Entering the basement should blind and teleport the player to the opposite end of the basement, while the "serial killer" is spawned in the center.
 	Escaping the basement gives a map showing the final clue location behind the cottage.
-		Map code:
-			
+		Map id:
+			170963
 		Tag:
 			cottage3
 		Score: 
