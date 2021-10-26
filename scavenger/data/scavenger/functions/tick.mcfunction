@@ -1,0 +1,1 @@
+# Code here executes every tick once the datapack is loaded

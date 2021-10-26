@@ -1,0 +1,1 @@
+# Code here executes once on the tick that the datapack fully loads.
