@@ -5,3 +5,4 @@
 /misc.xml
 ../.idea
 *.xml
+*.pyc
