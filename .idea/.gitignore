@@ -5,3 +5,5 @@
 /misc.xml
 ../.idea
 *.xml
+*.pyc
+/__pycache__/
