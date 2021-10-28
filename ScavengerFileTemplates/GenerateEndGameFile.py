@@ -1,6 +1,9 @@
 from ScavengerConstants import *
 
 def generateEndGameFile():
+    """
+    generates the end game file for the datapack
+    """
     clearCommand = '# Clear inventories\n'
     clearCommand += 'execute as @a[team=ScavengerHunt] run clear\n\n'
 

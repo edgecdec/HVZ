@@ -1,6 +1,9 @@
 from ScavengerConstants import *
 
 def generateCheckIfAnyoneFinishedFile():
+    """
+    generates the check if anyone finished file for the datapack
+    """
     checkIfFinishCommand = '# Check if anyone has just finished\n'
     checkIfFinishCommand += 'execute as @a[distance=..5,scores={TreasuresLeft=..0},tag=!finished] run say HAS COMPLETED THE SCAVENGER HUNT!\n\n'
 

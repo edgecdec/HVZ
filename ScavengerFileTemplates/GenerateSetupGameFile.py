@@ -1,6 +1,9 @@
 from ScavengerConstants import *
 
 def generateSetupGameFile():
+    """
+    generates the setup game file for the datapack
+    """
     createTreasuresLeftCommand = '# adds scoreboard Treasures Left\n'
     createTreasuresLeftCommand += 'scoreboard objectives add TreasuresLeft dummy {"text":"Items Left","bold":true}\n'
     createTreasuresLeftCommand += 'scoreboard objectives add ScavengerRanking dummy {"text":"Scavenger Ranking","bold":true}\n\n'
