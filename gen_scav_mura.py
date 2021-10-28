@@ -1,6 +1,7 @@
 import sys, random, argparse, os, errno
 from datetime import datetime
-from num2words import num2words
+
+DEFAULT_DISTANCE = 4
 
 items = ['brick']
 dirpath = 'scavenger_mura/data/scavenger/functions'
@@ -21,18 +22,26 @@ def generate(variable='', num=1):
 
     for item in items:
         # /items folder with items
-        message = f'# Found a treasure\ngive @a[distance=..5,tag=!{item},team=ScavengerHunt]'
-        sound = '\nplaysound block.note_block.bell block @p ~ ~ ~ 5 0 1\n'
-        tell = '\ntellraw @p ["", {"text": "You found "},{"text": "ITEM ' + num2words(
-            num).upper() + '!", "bold": true, "color": "red"}]\n'
-        subtract = '\n# subtract 1 from treasures left\nscoreboard players remove @a[distance= ..4, tag=!' + num2words(
-            num) + ', team=ScavengerHunt] TreasuresLeft 1\n'
-        add = '\n# add tag indicating they found the treasure\ntag @a[distance=..4, team=ScavengerHunt] add ' + num2words(
-            num) + '\n'
-        finish = '\n# check to see if anyone has won\nfunction scavenger:items/see_if_anyone_finished'
+        giveCommand = '# Found a treasure\n'
+        giveCommand += f'give @a[distance=..{DEFAULT_DISTANCE},tag=!{item},team=ScavengerHunt] {item}\n\n'
 
-        with open(dirpath + '/items/scavenger_found_' + num2words(num) + '.mcfunction', 'w+') as itemf:
-            itemf.write(message + item + sound + tell + subtract + add + finish)
+        soundCommand = '# Play sound to user indicating they have found an item\n'
+        soundCommand += 'playsound block.note_block.bell block @p ~ ~ ~ 5 0 1\n\n'
+
+        tellCommand = '# Tell user the item they have found\n'
+        tellCommand += f'tellraw @p ["", {{"text": "You found "}},{{"text": "a {item}!", "bold": true, "color": "red"}}]\n\n'
+
+        treasureLeftCommand = '# subtract 1 from treasures left\n'
+        treasureLeftCommand += f'scoreboard players remove @a[distance= ..{DEFAULT_DISTANCE},tag=!{item},team=ScavengerHunt] TreasuresLeft 1\n\n'
+
+        tagAddCommand = '# add tag indicating they found the treasure\n'
+        tagAddCommand+= f'tag @a[distance=..{DEFAULT_DISTANCE},team=ScavengerHunt] add {item}\n\n'
+
+        finishCommand = '# check to see if anyone has won\n'
+        finishCommand += 'function scavenger:items/see_if_anyone_finished\n\n'
+
+        with open(f'{dirpath}/items/scavenger_found_{item}.mcfunction', 'w+') as itemf:
+            itemf.write(f'{giveCommand}{item}{soundCommand}{tellCommand}{treasureLeftCommand}{finishCommand}')
         num += 1
         itemf.close()
 
@@ -51,10 +60,10 @@ def generate(variable='', num=1):
     removeteam = '\n# Remove Team\nteam remove ScavengerHunt\nteam remove ScavengerFinished\n'
     removeobj = '\n# Remove Scoreboard Objective\nscoreboard objectives remove TreasuresLeft\nscoreboard objectives remove ScavengerRanking\n'
     tag = '\n# Remove Tags\n'
-    for i in range(1, num):
-        tag += 'tag @a remove ' + num2words(i) + '\n'
+    for item in items:
+        tag += 'tag @a remove ' + item + '\n'
     with open(dirpath + '/control/scavenger_end_game.mcfunction', 'w+') as endf:
-        endf.write(clear + removeteam + removeobj + tag + 'tag @a remove FINISHED')
+        endf.write(clear + removeteam + removeobj + tag + 'tag @a remove finished')
     endf.close()
 
     # setup game
@@ -75,11 +84,11 @@ def generate(variable='', num=1):
 def pack():
     text = '{\n\t"pack": {\n\t\t"pack_format": 5,\n\t\t"description": "scavenger generate script compiled on ' + datetime.now().strftime(
         "%m/%d/%Y %H:%M:%S") + '"\n\t}\n}'
-    with open('scavenger/pack.mcmeta', 'w+') as packf:
+    with open('scavenger_mura/pack.mcmeta', 'w+') as packf:
         packf.write(text)
     packf.close()
 
-    text = '# Check if anyone has finished\nexecute as @a[distance=..5,scores={TreasuresLeft=..0},tag=!FINISHED] run say HAS COMPLETED THE SCAVENGER HUNT!\nexecute as @a[distance=..5,scores={TreasuresLeft=..0},tag=!FINISHED] run summon firework_rocket ~ ~3 ~ {LifeTime:20,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:2,Explosions:[{Type:1,Flicker:0,Trail:1,Colors:[I;8073150,14602026],FadeColors:[I;14602026]}]}}}}\ntag @a[distance=..5,scores={TreasuresLeft=..0},tag=!FINISHED] add FINISHED\nexecute as @a[tag=FINISHED, scores={TreasuresLeft=..0}] run scoreboard players add @a[tag=FINISHED, scores={TreasuresLeft=..0}] ScavengerRanking 1'
+    text = '# Check if anyone has finished\nexecute as @a[distance=..5,scores={TreasuresLeft=..0},tag=!finished] run say HAS COMPLETED THE SCAVENGER HUNT!\nexecute as @a[distance=..5,scores={TreasuresLeft=..0},tag=!FINISHED] run summon firework_rocket ~ ~3 ~ {LifeTime:20,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:2,Explosions:[{Type:1,Flicker:0,Trail:1,Colors:[I;8073150,14602026],FadeColors:[I;14602026]}]}}}}\ntag @a[distance=..5,scores={TreasuresLeft=..0},tag=!FINISHED] add FINISHED\nexecute as @a[tag=FINISHED, scores={TreasuresLeft=..0}] run scoreboard players add @a[tag=FINISHED, scores={TreasuresLeft=..0}] ScavengerRanking 1'
     with open(dirpath + '/items/see_if_anyone_finished.mcfunction', 'w+') as seef:
         seef.write(text)
 
