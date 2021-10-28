@@ -1,7 +1,7 @@
 import sys, random, argparse, os, errno
 from datetime import datetime
 
-DEFAULT_DISTANCE = 4
+DEFAULT_DISTANCE = 5
 
 items = ['brick']
 dirpath = 'scavenger_mura/data/scavenger/functions'
@@ -41,7 +41,7 @@ def generate(variable='', num=1):
         finishCommand += 'function scavenger:items/see_if_anyone_finished\n\n'
 
         with open(f'{dirpath}/items/scavenger_found_{item}.mcfunction', 'w+') as itemf:
-            itemf.write(f'{giveCommand}{item}{soundCommand}{tellCommand}{treasureLeftCommand}{finishCommand}')
+            itemf.write(f'{giveCommand}{soundCommand}{tellCommand}{treasureLeftCommand}{finishCommand}')
         num += 1
         itemf.close()
 
