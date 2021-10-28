@@ -11,4 +11,4 @@ scoreboard objectives remove ScavengerRanking
 
 # Remove Tags
 tag @a remove brick
-tag @a remove finished tag @a remove finished
+tag @a remove finished
