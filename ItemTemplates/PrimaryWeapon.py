@@ -1,5 +1,5 @@
 from Util import *
-from Constants import *
+from HVZConstants import *
 
 def createPrimaryWeaponString(weaponData):
     commandStr = f"execute as @p if entity @s[team=HVZHuman,tag={weaponData['tagName']}] "

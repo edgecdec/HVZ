@@ -1,3 +1,6 @@
+import zipfile
+import os
+
 def putStringOnMultipleLines(inputStr, maxLength = 30, textColor = "gold"):
     curLineLen = 0
     strList = inputStr.split(' ')
@@ -25,3 +28,13 @@ def getCustomModelData(weaponData):
         return f"CustomModelData:{weaponData['customModelData']}, "
     else:
         return ""
+
+def zipDir(inputPath, outputFile):
+    # ziph is zipfile handle
+    ziph = zipfile.ZipFile(outputFile, 'w', zipfile.ZIP_DEFLATED)
+    for root, dirs, files in os.walk(inputPath):
+        for file in files:
+            ziph.write(os.path.join(root, file),
+                       os.path.relpath(os.path.join(root, file),
+                                       os.path.join(outputFile, '..')))
+    ziph.close()

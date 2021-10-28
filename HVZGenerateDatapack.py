@@ -1,7 +1,9 @@
 import csv
-from ItemTemplates.PrimaryWeapon import *
-from ItemTemplates.SecondaryWeapon import *
-from ItemTemplates.Ammo import *
+from HVZConstants import *
+from ItemTemplates.PrimaryWeapon import createPrimaryWeaponString
+from ItemTemplates.SecondaryWeapon import createSecondaryWeaponString
+from ItemTemplates.Ammo import createAmmoString
+from Util import zipDir
 
 data = []
 with open('HVZWeaponInfo.csv') as f:
@@ -85,3 +87,6 @@ with open(f"{KIT_FILE_PATH}remove_code_generated_tags_secondary.mcfunction", 'w'
     curOutfile.write("execute as @s run function hvz:kit/remove_melee_tags\n")
 
 print("DONE!")
+
+#Turn whole datapack into .zip file
+zipDir('hvz/', 'hvz.zip')

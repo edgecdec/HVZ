@@ -1,4 +1,4 @@
-from Constants import *
+from HVZConstants import *
 from Util import *
 
 def createAmmoString(weaponData):

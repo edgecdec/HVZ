@@ -1,5 +1,5 @@
 from Util import *
-from Constants import *
+from HVZConstants import *
 
 
 def createSecondaryWeaponString(weaponData):
