@@ -26,22 +26,28 @@ if not os.path.exists(f'{DIR_PATH}items'):
 if not os.path.exists(f'{DIR_PATH}control'):
     os.makedirs(f'{DIR_PATH}control')
 
-# Create files for all items
+for file in os.scandir(f'{DIR_PATH}items'):
+    os.remove(file.path)
+
+print("Creating files for all items to find...")
 generateItemsToFindFiles()
 
-# Create join game file
+print("Creating join game file...")
 generateJoinGameFile()
 
-# Create end game file
+print("Creating end game file...")
 generateEndGameFile()
 
-# Create setup game file
+print("Creating setup game file...")
 generateSetupGameFile()
 
-# Create pack meta file
+print("Creating pack meta file...")
 generatePackMetaFile()
 
-# Create see if anyone finished file
+print("Creating see if anyone finished file...")
 generateCheckIfAnyoneFinishedFile()
 
+print("Zipping datapack...")
 zipDir(BASE_PATH, f'scavenger_autogen.zip')
+
+print("DONE!")

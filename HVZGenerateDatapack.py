@@ -5,6 +5,10 @@ from ItemTemplates.SecondaryWeapon import createSecondaryWeaponString
 from ItemTemplates.Ammo import createAmmoString
 from Util import zipDir
 
+"""
+RUN THIS FILE TO GENERATE THE HVZ DATAPACK!
+"""
+
 data = []
 with open('HVZWeaponInfo.csv') as f:
     data = [{k: str(v) for k, v in row.items()}
@@ -12,8 +16,6 @@ with open('HVZWeaponInfo.csv') as f:
 
 tagListPrimary = []
 tagListSecondary = []
-
-# TODO: use f strings for all of this
 
 with open(f'{KIT_FILE_PATH}code_generated_kit_logic.mcfunction', 'w') as kitOutfile:
     print("Generating kits...")
