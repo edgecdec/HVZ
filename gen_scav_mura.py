@@ -13,7 +13,7 @@ if not os.path.exists(os.path.dirname(dirpath)):
             raise
 
 
-def generate(variable='', num=1):
+def generate():
     if not os.path.exists(dirpath + '/items'):
         os.makedirs(dirpath + '/items')
 
@@ -42,17 +42,23 @@ def generate(variable='', num=1):
 
         with open(f'{dirpath}/items/scavenger_found_{item}.mcfunction', 'w+') as itemf:
             itemf.write(f'{giveCommand}{soundCommand}{tellCommand}{treasureLeftCommand}{finishCommand}')
-        num += 1
         itemf.close()
 
-    # join game
-    clear = '# clear inventory\nexecute as @p run clear\n'
-    setscore = '\n# set scoreboard treasures left to 0\nscoreboard players set @p TreasuresLeft ' + str(
-        num - 1) + '\n'
-    score = 'scoreboard players set @p ScavengerRanking 0\n'
-    join = '\n# join team\nexecute as @p run team join ScavengerHunt'
+    # Create join game file
+    clearCommand = '# clear inventory\n'
+    clearCommand += 'execute as @p run clear\n\n'
+
+    scoreboardCreationCommand = '# set scoreboard treasures left to 0\n'
+    scoreboardCreationCommand += f'scoreboard players set @p TreasuresLeft {str(len(items))}\n\n'
+
+    scoreboardPlayerCommand = '# set finishing rank to 0\n'
+    scoreboardPlayerCommand += 'scoreboard players set @p ScavengerRanking 0\n\n'
+
+    joinTeamCommand = '# join team\n'
+    joinTeamCommand += 'execute as @p run team join ScavengerHunt\n'
+
     with open(dirpath + '/control/join_game.mcfunction', 'w+') as joinf:
-        joinf.write(clear + setscore + score + join)
+        joinf.write(f'{clearCommand}{scoreboardCreationCommand}{scoreboardPlayerCommand}{joinTeamCommand}')
     joinf.close()
 
     # end game
@@ -72,8 +78,7 @@ def generate(variable='', num=1):
     addscavfin = '\n# add Scavenger Finished Team\nteam add ScavengerFin "ScavengerFinished"\nteam modify ScavengerFin color dark_blue\n'
     addwait = '\n# if player has waitingScavenger tag have them join the team\nexecute as @a[tag=waitingScavenger] run team join ScavengerHunt\n'
     clear = '\n# clear player inventory\nexecute as @a[team=ScavengerHunt] run clear\n'
-    addunfound = '\n# set all treasures to unfound\nscoreboard players set @a[team=ScavengerHunt] TreasuresLeft ' + str(
-        num - 1) + '\n'
+    addunfound = '\n# set all treasures to unfound\nscoreboard players set @a[team=ScavengerHunt] TreasuresLeft ' + str(len(items)) + '\n'
     display = '\n# Display objective for users in scavenger hunt\nscoreboard objectives setdisplay sidebar.team.light_purple TreasuresLeft\n'
     displayfin = '\n# Display objective for users in scavenger finished team\nscoreboard objectives setdisplay sidebar.team.dark_blue ScavengerFin'
     with open(dirpath + '/control/scavenger_setup.mcfunction', 'w+') as setupf:
