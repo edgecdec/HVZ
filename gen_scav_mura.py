@@ -55,21 +55,31 @@ def generate():
     scoreboardPlayerCommand += 'scoreboard players set @p ScavengerRanking 0\n\n'
 
     joinTeamCommand = '# join team\n'
-    joinTeamCommand += 'execute as @p run team join ScavengerHunt\n'
+    joinTeamCommand += 'execute as @p run team join ScavengerHunt\n\n'
 
     with open(dirpath + '/control/join_game.mcfunction', 'w+') as joinf:
         joinf.write(f'{clearCommand}{scoreboardCreationCommand}{scoreboardPlayerCommand}{joinTeamCommand}')
     joinf.close()
 
-    # end game
-    clear = '# Clear inventories\nexecute as @a[team=ScavengerHunt] run clear\n'
-    removeteam = '\n# Remove Team\nteam remove ScavengerHunt\nteam remove ScavengerFinished\n'
-    removeobj = '\n# Remove Scoreboard Objective\nscoreboard objectives remove TreasuresLeft\nscoreboard objectives remove ScavengerRanking\n'
-    tag = '\n# Remove Tags\n'
+    # Create end game file
+    clearCommand = '# Clear inventories\n'
+    clearCommand += 'execute as @a[team=ScavengerHunt] run clear\n\n'
+
+    removeTeamCommand = '# Remove Teams\n'
+    removeTeamCommand += 'team remove ScavengerHunt\n'
+    removeTeamCommand += 'team remove ScavengerFinished\n\n'
+
+    removeScoreboardCommand = '# Remove Scoreboard Objective\n'
+    removeScoreboardCommand += 'scoreboard objectives remove TreasuresLeft\n'
+    removeScoreboardCommand += 'scoreboard objectives remove ScavengerRanking\n\n'
+
+    removeTagCommand = '# Remove Tags\n'
     for item in items:
-        tag += 'tag @a remove ' + item + '\n'
+        removeTagCommand += f'tag @a remove {item}\n'
+    removeTagCommand += 'tag @a remove finished'
+
     with open(dirpath + '/control/scavenger_end_game.mcfunction', 'w+') as endf:
-        endf.write(clear + removeteam + removeobj + tag + 'tag @a remove finished')
+        endf.write(f'{clearCommand}{removeTeamCommand}{removeScoreboardCommand}{removeTagCommand}')
     endf.close()
 
     # setup game

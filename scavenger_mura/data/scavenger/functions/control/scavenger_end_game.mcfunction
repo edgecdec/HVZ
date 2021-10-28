@@ -1,7 +1,7 @@
 # Clear inventories
 execute as @a[team=ScavengerHunt] run clear
 
-# Remove Team
+# Remove Teams
 team remove ScavengerHunt
 team remove ScavengerFinished
 
@@ -11,4 +11,4 @@ scoreboard objectives remove ScavengerRanking
 
 # Remove Tags
 tag @a remove brick
-tag @a remove finished
+tag @a remove finished tag @a remove finished
