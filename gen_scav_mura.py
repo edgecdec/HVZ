@@ -2,8 +2,10 @@ import sys, random, argparse, os, errno
 from datetime import datetime
 
 DEFAULT_DISTANCE = 5
+PACK_FORMAT_NUM = 5
 
 ITEMS = ['brick']
+AUTHORS = ['edge_dec', 'XtremeGumdrop']
 
 NUM_ITEMS = len(ITEMS)
 
@@ -119,10 +121,21 @@ def generate():
 
 
 def pack():
-    text = '{\n\t"pack": {\n\t\t"pack_format": 5,\n\t\t"description": "scavenger generate script compiled on ' + datetime.now().strftime(
-        "%m/%d/%Y %H:%M:%S") + '"\n\t}\n}'
+    authorStr = f"{', '.join(AUTHORS)} et al."
+    curTimeStr = datetime.now().strftime("%m/%d/%Y %H:%M:%S")
+
+    packFormatLine = f'\t\t"pack_format": {PACK_FORMAT_NUM},\n'
+    packDescLine = f'\t\t"description": "Created by {authorStr} on {curTimeStr}"\n'
+
+    packLines = '{\n'
+    packLines += '\t"pack": {\n'
+    packLines += packFormatLine
+    packLines += packDescLine
+    packLines += '\t}\n'
+    packLines += '}'
+
     with open('scavenger_mura/pack.mcmeta', 'w+') as packf:
-        packf.write(text)
+        packf.write(packLines)
     packf.close()
 
     text = '# Check if anyone has finished\nexecute as @a[distance=..5,scores={TreasuresLeft=..0},tag=!finished] run say HAS COMPLETED THE SCAVENGER HUNT!\nexecute as @a[distance=..5,scores={TreasuresLeft=..0},tag=!FINISHED] run summon firework_rocket ~ ~3 ~ {LifeTime:20,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:2,Explosions:[{Type:1,Flicker:0,Trail:1,Colors:[I;8073150,14602026],FadeColors:[I;14602026]}]}}}}\ntag @a[distance=..5,scores={TreasuresLeft=..0},tag=!FINISHED] add FINISHED\nexecute as @a[tag=FINISHED, scores={TreasuresLeft=..0}] run scoreboard players add @a[tag=FINISHED, scores={TreasuresLeft=..0}] ScavengerRanking 1'
