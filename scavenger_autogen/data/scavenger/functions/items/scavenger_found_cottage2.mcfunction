@@ -14,5 +14,5 @@ execute as @a[distance=..5,tag=!cottage2,team=ScavengerHunt] run tellraw @s ["",
 execute as @a[distance=..5,tag=!cottage2,team=ScavengerHunt] run scoreboard players remove @s TreasuresLeft 1
 
 # check to see if anyone has won
-function scavenger:items/see_if_anyone_finished
+function scavenger:control/see_if_anyone_finished
 
