@@ -30,8 +30,8 @@ def generateItemsToFindFiles(itemDict):
 
         giveItemHeadCommand = ''
         if item['headPlayerName'] != '':
-            giveItemHeadCommand = 'Give player a head\n'
-            giveItemHeadCommand += f'{executeAsRunCommandPart} give @s player_head{{SkullOwner:{item["headPlayerName"]}}}'
+            giveItemHeadCommand = '# Give player a head\n'
+            giveItemHeadCommand += f'{executeAsRunCommandPart} give @s player_head{{SkullOwner:{item["headPlayerName"]}}}\n\n'
 
         giveItemCommand = '# Found a treasure\n'
         giveItemCommand += f'{executeAsRunCommandPart} give @s {itemName}\n\n'
