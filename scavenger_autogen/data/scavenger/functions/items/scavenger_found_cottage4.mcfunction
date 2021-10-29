@@ -1,5 +1,5 @@
 # Found a treasure
-execute as @a[distance=..5,tag=!cottage4,team=ScavengerHunt] run give @s pimpkin
+execute as @a[distance=..5,tag=!cottage4,team=ScavengerHunt] run give @s pumpkin
 
 # Give player a map
 execute as @a[distance=..5,tag=!cottage4,team=ScavengerHunt] run give @s filled_map{map: 170963}
@@ -8,7 +8,7 @@ execute as @a[distance=..5,tag=!cottage4,team=ScavengerHunt] run give @s filled_
 execute as @a[distance=..5,tag=!cottage4,team=ScavengerHunt] run playsound block.note_block.bell block @s ~ ~ ~ 5 0 1
 
 # Tell user the item they have found
-execute as @a[distance=..5,tag=!cottage4,team=ScavengerHunt] run tellraw @s ["", {"text": "You found "},{"text": "a pimpkin!", "bold": true, "color": "red"}]
+execute as @a[distance=..5,tag=!cottage4,team=ScavengerHunt] run title @s title ["", {"text": "You found "},{"text": "a pumpkin!", "bold": true, "color": "red"}]
 
 # subtract 1 from treasures left
 execute as @a[distance=..5,tag=!cottage4,team=ScavengerHunt] run scoreboard players remove @s TreasuresLeft 1

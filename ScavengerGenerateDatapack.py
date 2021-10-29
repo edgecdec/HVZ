@@ -1,6 +1,5 @@
 import os
 import errno
-import csv
 from ScavengerConstants import *
 from ScavengerFileTemplates.GeneratePackMetaFile import generatePackMetaFile
 from ScavengerFileTemplates.GenerateItemsToFindFiles import generateItemsToFindFiles
@@ -8,14 +7,12 @@ from ScavengerFileTemplates.GenerateJoinGameFile import generateJoinGameFile
 from ScavengerFileTemplates.GenerateEndGameFile import generateEndGameFile
 from ScavengerFileTemplates.GenerateSetupGameFile import generateSetupGameFile
 from ScavengerFileTemplates.GenerateSeeIfAnyoneFinishedFile import generateCheckIfAnyoneFinishedFile
+from Util import setItemTags
 from Util import zipDir
 
 """
 RUN THIS FILE TO GENERATE THE SCAVENGER DATAPACK!
 """
-
-scavInfo = csv.DictReader(open("ScavengerInfo.csv"))
-scavDict = [row for row in scavInfo]
 
 if not os.path.exists(os.path.dirname(SCAV_FUNCTION_DIR_PATH)):
     try:
@@ -33,8 +30,10 @@ if not os.path.exists(f'{SCAV_FUNCTION_DIR_PATH}control'):
 for file in os.scandir(f'{SCAV_FUNCTION_DIR_PATH}items'):
     os.remove(file.path)
 
+setItemTags(SCAV_DICT)
+
 print("Creating files for all items to find...")
-generateItemsToFindFiles(scavDict)
+generateItemsToFindFiles(SCAV_DICT)
 
 print("Creating join game file...")
 generateJoinGameFile()

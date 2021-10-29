@@ -16,8 +16,8 @@ def generateEndGameFile():
     removeScoreboardCommand += 'scoreboard objectives remove ScavengerRanking\n\n'
 
     removeTagCommand = '# Remove Tags\n'
-    for item in ITEMS:
-        removeTagCommand += f'tag @a remove {item}\n'
+    for item in SCAV_DICT:
+        removeTagCommand += f'tag @a remove {item["tag"]}\n'
     removeTagCommand += 'tag @a remove finished'
 
     with open(f'{SCAV_FUNCTION_DIR_PATH}control/scavenger_end_game.mcfunction', 'w+') as outfile:

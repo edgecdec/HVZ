@@ -6,7 +6,7 @@ playsound block.note_block.bell block @a[distance=..4,tag=!brick,team=ScavengerH
 tellraw @a[distance=..4,tag=!brick,team=ScavengerHunt] ["", {"text": "You found "},{"text": "BRICK!", "bold": true, "color": "red"}]
 
 # subtract 1 from treasures left
-scoreboard players remove @a[distance= ..4, tag=!brick, team=ScavengerHunt] TreasuresLeft 1
+scoreboard players remove @a[distance= ..4, tag=!brick, team=ScavengerHunt] TreasuresLeft
 
 # add tag indicating they found the treasure
 tag @a[distance=..4, team=ScavengerHunt] add brick

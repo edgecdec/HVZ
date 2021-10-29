@@ -1,6 +1,7 @@
 # adds scoreboard Treasures Left
 scoreboard objectives add TreasuresLeft dummy {"text":"Items Left","bold":true}
 scoreboard objectives add ScavengerRanking dummy {"text":"Scavenger Ranking","bold":true}
+scoreboard objectives add HintsFound dummy {"text":"Total Score", "bold":true}
 
 # adds Scavenger Hunt Team
 team add ScavengerHunt "ScavengerHunt"
