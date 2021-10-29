@@ -12,9 +12,7 @@ def generateItemsToFindFiles(itemDict):
         if item['tellrawColor'] != '':
             itemTellrawColor = item['tellrawColor']
 
-        itemTag = itemName
-        if item['tag'] != '':
-            itemTag = item['tag']
+        itemTag = item['tag']
 
         # Seperated out to allow for easier changes
         entitiesToGiveTo = f"@a[distance=..{DEFAULT_DISTANCE},tag=!{itemTag},team=ScavengerHunt]"

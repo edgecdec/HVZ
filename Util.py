@@ -38,3 +38,8 @@ def zipDir(inputPath, outputFile):
                        os.path.relpath(os.path.join(root, file),
                                        os.path.join(outputFile, '..')))
     ziph.close()
+
+def setItemTags(scavDict):
+    for item in scavDict:
+        if item['tag'] == '':
+            item['tag'] = item['item']

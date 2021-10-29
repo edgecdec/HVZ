@@ -10,7 +10,8 @@ scoreboard objectives remove TreasuresLeft
 scoreboard objectives remove ScavengerRanking
 
 # Remove Tags
-tag @a remove brick
-tag @a remove diamond
-tag @a remove gold_ingot
+tag @a remove cottage1
+tag @a remove cottage2
+tag @a remove cottage3
+tag @a remove cottage4
 tag @a remove finished
