@@ -17,7 +17,7 @@ execute as @a[tag=waitingScavenger] run team join ScavengerHunt
 execute as @a[team=ScavengerHunt] run clear
 
 # set all treasures to unfound
-scoreboard players set @a[team=ScavengerHunt] TreasuresLeft 1
+scoreboard players set @a[team=ScavengerHunt] TreasuresLeft 3
 
 # Display objective for players in scavenger hunt
 scoreboard objectives setdisplay sidebar.team.light_purple TreasuresLeft

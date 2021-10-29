@@ -6,7 +6,7 @@ def generatePackMetaFile():
     generates the pack.mcmeta file for the datapack
     """
     authorStr = f"{', '.join(AUTHORS)} et al."
-    curTimeStr = datetime.now().strftime("%m/%d/%Y %H:%M:%S")
+    curTimeStr = datetime.now().strftime("%m/%d/%Y")
 
     packFormatLine = f'\t\t"pack_format": {PACK_FORMAT_NUM},\n'
     packDescLine = f'\t\t"description": "Created by {authorStr} on {curTimeStr}"\n'
