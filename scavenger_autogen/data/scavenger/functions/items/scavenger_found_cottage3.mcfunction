@@ -2,7 +2,7 @@
 execute as @a[distance=..5,tag=!cottage3,team=ScavengerHunt] run give @s pumpkin
 
 # Give player a map
-execute as @a[distance=..5,tag=!cottage3,team=ScavengerHunt] run give @s filled_map{map: 170963}
+execute as @a[distance=..5,tag=!cottage3,team=ScavengerHunt] run give @s filled_map{map:170963}
 
 # Play sound to user indicating they have found an item
 execute as @a[distance=..5,tag=!cottage3,team=ScavengerHunt] run playsound block.note_block.bell block @s ~ ~ ~ 5 0 1

@@ -1,10 +1,8 @@
 # Found a treasure
 execute as @a[distance=..5,tag=!cottage4,team=ScavengerHunt] run give @s pumpkin
 
-# Give player a map
-execute as @a[distance=..5,tag=!cottage4,team=ScavengerHunt] run give @s filled_map{map: 170963}
-
-# Play sound to user indicating they have found an item
+Give player a head
+execute as @a[distance=..5,tag=!cottage4,team=ScavengerHunt] run give @s player_head{SkullOwner:lotusMMI}# Play sound to user indicating they have found an item
 execute as @a[distance=..5,tag=!cottage4,team=ScavengerHunt] run playsound block.note_block.bell block @s ~ ~ ~ 5 0 1
 
 # Tell user the item they have found
