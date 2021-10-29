@@ -24,6 +24,6 @@ def generateItemsToFindFiles():
         finishCommand = '# check to see if anyone has won\n'
         finishCommand += 'function scavenger:items/see_if_anyone_finished\n\n'
 
-        with open(f'{DIR_PATH}/items/scavenger_found_{item}.mcfunction', 'w+') as outfile:
+        with open(f'{SCAV_FUNCTION_DIR_PATH}/items/scavenger_found_{item}.mcfunction', 'w+') as outfile:
             outfile.write(f'{giveCommand}{soundCommand}{tellCommand}{treasureLeftCommand}{finishCommand}')
         outfile.close()

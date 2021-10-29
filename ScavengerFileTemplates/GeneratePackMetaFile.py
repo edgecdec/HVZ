@@ -18,6 +18,6 @@ def generatePackMetaFile():
     packLines += '\t}\n'
     packLines += '}'
 
-    with open(f'{BASE_PATH}/pack.mcmeta', 'w+') as outfile:
+    with open(f'{SCAV_BASE_PATH}/pack.mcmeta', 'w+') as outfile:
         outfile.write(packLines)
     outfile.close()

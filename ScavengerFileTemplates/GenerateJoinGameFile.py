@@ -16,6 +16,6 @@ def generateJoinGameFile():
     joinTeamCommand = '# join team\n'
     joinTeamCommand += 'execute as @p run team join ScavengerHunt\n\n'
 
-    with open(f'{DIR_PATH}control/join_game.mcfunction', 'w+') as outfile:
+    with open(f'{SCAV_FUNCTION_DIR_PATH}control/join_game.mcfunction', 'w+') as outfile:
         outfile.write(f'{clearCommand}{scoreboardCreationCommand}{scoreboardPlayerCommand}{joinTeamCommand}')
     outfile.close()

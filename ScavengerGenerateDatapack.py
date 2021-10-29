@@ -13,20 +13,20 @@ from Util import zipDir
 RUN THIS FILE TO GENERATE THE SCAVENGER DATAPACK!
 """
 
-if not os.path.exists(os.path.dirname(DIR_PATH)):
+if not os.path.exists(os.path.dirname(SCAV_FUNCTION_DIR_PATH)):
     try:
-        os.makedirs(os.path.dirname(DIR_PATH))
+        os.makedirs(os.path.dirname(SCAV_FUNCTION_DIR_PATH))
     except OSError as exc:
         if exc.errno != errno.EEXIST:
             raise
 
-if not os.path.exists(f'{DIR_PATH}items'):
-    os.makedirs(f'{DIR_PATH}items')
+if not os.path.exists(f'{SCAV_FUNCTION_DIR_PATH}items'):
+    os.makedirs(f'{SCAV_FUNCTION_DIR_PATH}items')
 
-if not os.path.exists(f'{DIR_PATH}control'):
-    os.makedirs(f'{DIR_PATH}control')
+if not os.path.exists(f'{SCAV_FUNCTION_DIR_PATH}control'):
+    os.makedirs(f'{SCAV_FUNCTION_DIR_PATH}control')
 
-for file in os.scandir(f'{DIR_PATH}items'):
+for file in os.scandir(f'{SCAV_FUNCTION_DIR_PATH}items'):
     os.remove(file.path)
 
 print("Creating files for all items to find...")
@@ -48,6 +48,6 @@ print("Creating see if anyone finished file...")
 generateCheckIfAnyoneFinishedFile()
 
 print("Zipping datapack...")
-zipDir(BASE_PATH, f'scavenger_autogen.zip')
+zipDir(SCAV_BASE_PATH, f'scavenger_autogen.zip')
 
 print("DONE!")

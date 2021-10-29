@@ -31,6 +31,6 @@ def generateSetupGameFile():
     displayObjectiveFinishedCommand = '# Display objective for users in scavenger finished team\n'
     displayObjectiveFinishedCommand += 'scoreboard objectives setdisplay sidebar.team.dark_blue ScavengerFin\n\n'
 
-    with open(f'{DIR_PATH}control/scavenger_setup.mcfunction', 'w+') as outfile:
+    with open(f'{SCAV_FUNCTION_DIR_PATH}control/scavenger_setup.mcfunction', 'w+') as outfile:
         outfile.write(f'{createTreasuresLeftCommand}{createScavHuntTeamCommand}{createScavHuntFinishTeam}{addWaitingTagCommand}{clearCommand}{createUnfoundCommand}{displayObjectivePlayingCommand}{displayObjectiveFinishedCommand}')
     outfile.close()

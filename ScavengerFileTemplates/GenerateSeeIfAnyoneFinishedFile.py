@@ -16,6 +16,6 @@ def generateCheckIfAnyoneFinishedFile():
     increaseRankOfFinishedPlayersCommand = '# Add 1 to rank of all players who have finished\n'
     increaseRankOfFinishedPlayersCommand += 'execute as @a[tag=finished, scores={TreasuresLeft=..0}] run scoreboard players add @s ScavengerRanking 1\n\n'
 
-    with open(f'{DIR_PATH}control/see_if_anyone_finished.mcfunction', 'w+') as outfile:
+    with open(f'{SCAV_FUNCTION_DIR_PATH}control/see_if_anyone_finished.mcfunction', 'w+') as outfile:
         outfile.write(f'{checkIfFinishCommand}{oneTimeCelebrationCommand}{addFinishedTagCommand}{increaseRankOfFinishedPlayersCommand}')
     outfile.close()
