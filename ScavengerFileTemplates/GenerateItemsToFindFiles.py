@@ -35,7 +35,7 @@ def generateItemsToFindFiles(itemDict):
         soundCommand += f'{executeAsRunCommandPart} playsound block.note_block.bell block @s ~ ~ ~ 5 0 1\n\n'
 
         tellCommand = '# Tell user the item they have found\n'
-        tellCommand += f'{executeAsRunCommandPart} tellraw @s ["", {{"text": "You found "}},{{"text": "a {itemName}!", "bold": true, "color": "{itemTellrawColor}"}}]\n\n'
+        tellCommand += f'{executeAsRunCommandPart} title @s title ["", {{"text": "You found "}},{{"text": "a {itemName}!", "bold": true, "color": "{itemTellrawColor}"}}]\n\n'
 
         treasureLeftCommand = '# subtract 1 from treasures left\n'
         treasureLeftCommand += f'{executeAsRunCommandPart} scoreboard players remove @s TreasuresLeft 1\n\n'
