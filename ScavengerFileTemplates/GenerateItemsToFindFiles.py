@@ -60,6 +60,7 @@ def generateItemsToFindFiles(itemDict):
                 f'{soundCommand}'
                 f'{tellCommand}'
                 f'{treasureLeftCommand}'
+                f'{tagAddCommand}'
                 f'{finishCommand}'
             )
         outfile.close()
