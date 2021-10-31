@@ -45,6 +45,11 @@ def generateItemsToFindFiles(itemDict):
         treasureLeftCommand = '# subtract 1 from treasures left\n'
         treasureLeftCommand += f'{executeAsRunCommandPart} scoreboard players remove @s TreasuresLeft 1\n\n'
 
+        extraFunctionCommand = ''
+        if item['function'] != '':
+            extraFunctionCommand = '# execute extra function with other commands\n'
+            extraFunctionCommand += f'{executeAsRunCommandPart} function scavenger:extras/{item["function"]}\n\n'
+
         tagAddCommand = '# add tag indicating they found the treasure\n'
         tagAddCommand += f'{executeAsRunCommandPart} tag @s add {itemTag}\n\n'
 
@@ -60,6 +65,7 @@ def generateItemsToFindFiles(itemDict):
                 f'{soundCommand}'
                 f'{tellCommand}'
                 f'{treasureLeftCommand}'
+                f'{extraFunctionCommand}'
                 f'{tagAddCommand}'
                 f'{finishCommand}'
             )
