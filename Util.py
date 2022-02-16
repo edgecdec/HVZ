@@ -43,3 +43,8 @@ def setItemTags(scavDict):
     for item in scavDict:
         if item['tag'] == '':
             item['tag'] = item['item']
+
+
+def runFileEveryXSeconds(functionPath, time):
+    '''If you use this you still need to add the fucntion to tick.mcfunction'''
+    pass

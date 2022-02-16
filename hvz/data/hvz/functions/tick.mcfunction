@@ -5,5 +5,6 @@ function hvz:control/medic_timer
 function hvz:control/bossbar_timer
 function hvz:control/decrement_timer
 function hvz:control/blizzard_timer
+function hvz:control/zombie_timer
 # function hvz:control/add_mobs_to_teams
 

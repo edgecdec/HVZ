@@ -1,0 +1,3 @@
+team remove PlayingMaze
+scoreboard objectives remove MazeTime
+scoreboard objectives remove MazeHighScore

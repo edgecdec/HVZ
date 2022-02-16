@@ -1,8 +1,9 @@
 import csv
 from HVZConstants import *
-from ItemTemplates.PrimaryWeapon import createPrimaryWeaponString
-from ItemTemplates.SecondaryWeapon import createSecondaryWeaponString
-from ItemTemplates.Ammo import createAmmoString
+from HVZItemTemplates.PrimaryWeapon import createPrimaryWeaponString
+from HVZItemTemplates.SecondaryWeapon import createSecondaryWeaponString
+from HVZItemTemplates.Ammo import createAmmoString
+from HVZFileTemplates.ZombieSaturation import generateZombieSaturationFile
 from Util import zipDir
 
 """
@@ -87,6 +88,8 @@ with open(f"{KIT_FILE_PATH}remove_code_generated_tags_secondary.mcfunction", 'w'
 
     curOutfile.write("\n# remove melee tags\n")
     curOutfile.write("execute as @s run function hvz:kit/remove_melee_tags\n")
+
+generateZombieSaturationFile()
 
 print("DONE!")
 
