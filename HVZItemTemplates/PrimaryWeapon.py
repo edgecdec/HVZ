@@ -14,7 +14,7 @@ def createPrimaryWeaponString(weaponData):
     commandStr += f"execute as @p if entity @s[team=HVZHuman,tag={weaponData['tagName']}] "
     commandStr += f"run give @p {weaponData['minecraftToolName']}"
     commandStr += f'{{Unbreakable:1, {getCustomModelData(weaponData)}PublicBukkitValues: {{"mweps:mweps": "{weaponData["mWepsBlasterName"]}"}},'
-    commandStr += f'display: {{Name: {{"extra":[{{"text":"{weaponData["displayName"]}"}}],"text":""}},'
+    commandStr += f'display: {{Name: \'[{{"text":"{weaponData["displayName"]}","bold":false,"italic":false}}]\','
     commandStr += f"Lore:[{putStringOnMultipleLines(weaponData['lore'])}]}}, "
     commandStr += f'AttributeModifiers:[{{AttributeName: "generic.armor", Amount: {str(weaponData["armor"])}'
     commandStr += ', Operation: 0, UUID: [I;-120927, 18617, 194438, -37234], Slot: mainhand, Name: "generic.armor"},'
