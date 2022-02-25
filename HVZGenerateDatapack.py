@@ -5,6 +5,7 @@ from HVZItemTemplates.SecondaryWeapon import createSecondaryWeaponString
 from HVZItemTemplates.Ammo import createAmmoString
 from HVZFileTemplates.ZombieSaturation import generateZombieSaturationFile
 from Util import zipDir
+from HumanKitGenerator import generateHumanKits
 
 """
 RUN THIS FILE TO GENERATE THE HVZ DATAPACK!
@@ -48,10 +49,10 @@ with open(f'{KIT_FILE_PATH}code_generated_kit_logic.mcfunction', 'w') as kitOutf
         if not isPrimaryWeapon:
             filePathPrimarySecondary = "secondary"
 
-        fileText += f"execute as @p run function hvz:kit/remove_code_generated_tags_{filePathPrimarySecondary}\n\n"
+        fileText += f"execute as @p run function hvz:kit_old/remove_code_generated_tags_{filePathPrimarySecondary}\n\n"
         fileText += f"tag @p add {curData['tagName']}\n\n"
-        fileText += "# call human kit\n"
-        fileText += "function hvz:kit/human"
+        fileText += "# call human kit_old\n"
+        fileText += "function hvz:kit_old/human"
 
         tagNameLower = str.lower(curData["tagName"])
         curFileName = f'human_kits/{filePathPrimarySecondary}/human_{tagNameLower}.mcfunction'
@@ -77,7 +78,7 @@ with open(f"{KIT_FILE_PATH}remove_code_generated_tags_primary.mcfunction", 'w') 
         curOutfile.write(curStr)
 
     curOutfile.write("\n# remove melee tags\n")
-    curOutfile.write("execute as @s run function hvz:kit/remove_melee_tags\n")
+    curOutfile.write("execute as @s run function hvz:kit_old/remove_melee_tags\n")
 
 with open(f"{KIT_FILE_PATH}remove_code_generated_tags_secondary.mcfunction", 'w') as curOutfile:
     print("Adding secondary tags to be removed...")
@@ -87,9 +88,11 @@ with open(f"{KIT_FILE_PATH}remove_code_generated_tags_secondary.mcfunction", 'w'
         curOutfile.write(curStr)
 
     curOutfile.write("\n# remove melee tags\n")
-    curOutfile.write("execute as @s run function hvz:kit/remove_melee_tags\n")
+    curOutfile.write("execute as @s run function hvz:kit_old/remove_melee_tags\n")
 
 generateZombieSaturationFile()
+
+generateHumanKits()
 
 print("DONE!")
 
