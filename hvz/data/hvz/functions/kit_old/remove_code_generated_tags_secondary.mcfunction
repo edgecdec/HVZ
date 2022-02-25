@@ -18,4 +18,4 @@ tag @s remove sweetRevenge
 tag @s remove bayonet
 
 # remove melee tags
-execute as @s run function hvz:kit/remove_melee_tags
+execute as @s run function hvz:kit_old/remove_melee_tags
