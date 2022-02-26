@@ -38,7 +38,7 @@ def generateZombieKits():
             for item in data:
                 tagName = item[ZOMBIE_KIT_CSV_FILE_KIT_NAME].lower()
                 kitTagRemoveFile.write(f"{EXECUTE_AS_TARGET_COMMAND} tag @s remove {tagName}\n")
-                allZombieFile.write(f"{EXECUTE_AS_TARGET_COMMAND} if @s[team={ZOMBIE_TEAM_NAME},scores={{PKilledAsZombie={item[ZOMBIE_KIT_CSV_FILE_KILLS_NEEDED]}}}] run {HVZ_CALL_FUNCTION_ZOMBIE_KIT_PATH}{tagName}\n")
+                allZombieFile.write(f"{EXECUTE_AS_TARGET_COMMAND} if entity @s[team={ZOMBIE_TEAM_NAME},scores={{PKilledAsZombie={item[ZOMBIE_KIT_CSV_FILE_KILLS_NEEDED]}}}] run {HVZ_CALL_FUNCTION_ZOMBIE_KIT_PATH}{tagName}\n")
 
 
                 kitFileName = f"get_{tagName}_kit"
