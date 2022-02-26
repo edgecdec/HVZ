@@ -5,5 +5,5 @@ execute as @s run item replace entity @s armor.chest with leather_chestplate{Unb
 execute as @s run give @s coal{PublicBukkitValues: {"mweps:mweps": "Hunter-Ability"},CustomModelData:1,display:{Name:'[{"text":"Spectral Quiver","italic":false,"color":"gold"}]',Lore:['[{"text":"Right click to receive 5 Spectral","italic":false}]','[{"text":"Arrows. Use these to track and mark","italic":false}]','[{"text":"enemies, or lend them to allies who","italic":false}]','[{"text":"need more ammo.","italic":false}]','[{"text":"Cooldown: 60 Seconds","italic":false,"color":"red"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"+5 Spectral Arrow","italic":false,"color":"blue"}]']}} 1
 
 #Give player a specific item
-execute as @s run give @s bow{Unbreakable:1,display:{Name:'[{"text":"Hunter\'s Bow","italic":false,"color":"gold"}]',Lore:['[{"text":"Shoots things dead.","italic":false}]']},Enchantments:[{id:power,lvl:2}]} 1
+execute as @s run give @s crossbow{Unbreakable:1,display:{Name:'[{"text":"Hunter\'s Crossbow","italic":false,"color":"gold"}]',Lore:['[{"text":"Shoots things dead.","italic":false}]']},Enchantments:[{id:piercing,lvl:1},{id:quick_charge,lvl:1}]} 1
 
