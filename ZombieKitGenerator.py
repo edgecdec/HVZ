@@ -43,8 +43,8 @@ def generateZombieKits():
         allZombieFile.write("#Give player tracking compass\n")
         allZombieFile.write(f"{EXECUTE_AS_TARGET_COMMAND} function player_tracker:compass/track_player\n\n")
 
-        allZombieFile.write("#Set player to adventure mode\n")
-        allZombieFile.write(f"{EXECUTE_AS_TARGET_COMMAND} gamemode adventure\n\n")
+        # allZombieFile.write("#Set player to adventure mode\n")
+        # allZombieFile.write(f"{EXECUTE_AS_TARGET_COMMAND} gamemode adventure\n\n")
 
         allZombieFile.write("#Add 0 to score to make sure it exists\n")
         allZombieFile.write(f"{EXECUTE_AS_TARGET_COMMAND} scoreboard players add @s PKilledAsZombie 0\n\n")
