@@ -56,7 +56,7 @@ def generateZombieKits():
                     outfile.write(f"{EXECUTE_AS_TARGET_COMMAND} item replace entity @s armor.feet with {item[ZOMBIE_KIT_CSV_FILE_BOOTS]}\n\n")
 
                     for key in item.keys():
-                        if not key.__contains__("Item") and item[key] != '':
+                        if key.__contains__("Item") and item[key] != '':
                             outfile.write(f"#Give player a specific item\n")
                             outfile.write(f"{EXECUTE_AS_TARGET_COMMAND} give @s {item[key]} 1\n\n")
 
