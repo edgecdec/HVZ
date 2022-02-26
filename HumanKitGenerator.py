@@ -24,7 +24,7 @@ def generateHumanKits():
 
         for item in data:
             outfile.write("#Give player specific item\n")
-            outfile.write(f"{EXECUTE_AS_TARGET_COMMAND} give {item['Item']} {item['Amount']}\n\n")
+            outfile.write(f"{EXECUTE_AS_TARGET_COMMAND} give @s {item['Item']} {item['Amount']}\n\n")
 
 
     data = []
