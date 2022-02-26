@@ -8,7 +8,7 @@ execute as @s run clear
 execute as @s run effect clear @s
 
 #Execute correct file based on tag
-execute as @s run if entity @s[team=HVZZombie,scores={PKilledAsZombie=..0}] run hvz:kit/zombie_kits/zombie_zero
-execute as @s run if entity @s[team=HVZZombie,scores={PKilledAsZombie=1}] run hvz:kit/zombie_kits/zombie_one
-execute as @s run if entity @s[team=HVZZombie,scores={PKilledAsZombie=2}] run hvz:kit/zombie_kits/zombie_two
-execute as @s run if entity @s[team=HVZZombie,scores={PKilledAsZombie=3..}] run hvz:kit/zombie_kits/zombie_three
+execute as @s if entity @s[team=HVZZombie,scores={PKilledAsZombie=..0}] run function hvz:kit/zombie_kits/zombie_zero
+execute as @s if entity @s[team=HVZZombie,scores={PKilledAsZombie=1}] run function hvz:kit/zombie_kits/zombie_one
+execute as @s if entity @s[team=HVZZombie,scores={PKilledAsZombie=2}] run function hvz:kit/zombie_kits/zombie_two
+execute as @s if entity @s[team=HVZZombie,scores={PKilledAsZombie=3..}] run function hvz:kit/zombie_kits/zombie_three
