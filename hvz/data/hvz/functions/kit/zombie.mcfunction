@@ -7,6 +7,9 @@ execute as @s run clear
 #Clear player effects
 execute as @s run effect clear @s
 
+#Give player tracking compass
+execute as @s run function player_tracker:compass/track_player
+
 #Add 0 to score to make sure it exists
 execute as @s run scoreboard players add @s PKilledAsZombie 0
 

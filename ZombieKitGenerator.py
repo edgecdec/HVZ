@@ -40,6 +40,9 @@ def generateZombieKits():
         allZombieFile.write("#Clear player effects\n")
         allZombieFile.write(f"{EXECUTE_AS_TARGET_COMMAND} effect clear @s\n\n")
 
+        allZombieFile.write("#Give player tracking compass\n")
+        allZombieFile.write(f"{EXECUTE_AS_TARGET_COMMAND} function player_tracker:compass/track_player\n\n")
+
         allZombieFile.write("#Add 0 to score to make sure it exists\n")
         allZombieFile.write(f"{EXECUTE_AS_TARGET_COMMAND} scoreboard players add @s PKilledAsZombie 0\n\n")
 
