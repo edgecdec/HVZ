@@ -10,6 +10,9 @@ execute as @s run effect clear @s
 #Give player tracking compass
 execute as @s run function player_tracker:compass/track_player
 
+#Set player to adventure mode
+execute as @s run gamemode adventure
+
 #Add 0 to score to make sure it exists
 execute as @s run scoreboard players add @s PKilledAsZombie 0
 
