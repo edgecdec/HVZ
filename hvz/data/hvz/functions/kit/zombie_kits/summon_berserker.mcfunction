@@ -1,0 +1,3 @@
+#Give player a specific item
+execute as @s run give @s silverfish_spawn_egg{PublicBukkitValues: {"mweps:mweps": "Summon-Berserker"},display:{Name:'[{"text":"Summon Berserker","italic":false,"color":"dark_green"}]',Lore:['[{"text":"Right click to summon a Berserker!","italic":false}]','[{"text":"Berserkers are faster and stronger","italic":false}]','[{"text":"than regular zombies and wear chain","italic":false}]','[{"text":"armor.","italic":false}]','[{"text":"Cooldown: 30 Seconds","italic":false,"color":"red"}]']},Enchantments:[{id:binding_curse,lvl:1},{id:vanishing_curse,lvl:1}],HideFlags:3} 1
+

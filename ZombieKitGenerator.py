@@ -2,13 +2,33 @@ from HVZConstants import *
 import csv
 
 def generateZombieKits():
-    # data = []
-    # with open('AllZombiesItems.csv') as f:
-    #     data = [{k: str(v) for k, v in row.items()}
-    #             for row in csv.DictReader(f, skipinitialspace=True)]
-
     allZombiesKit = "zombie"
     allZombiesRemoveKitTags = f"{allZombiesKit}_kit_remove_tags"
+
+    data = []
+    with open('ZombieSpecial.csv') as f:
+        data = [{k: str(v) for k, v in row.items()}
+                for row in csv.DictReader(f, skipinitialspace=True)]
+
+    for item in data:
+        tagName = item[ZOMBIE_KIT_CSV_FILE_KIT_NAME].lower()
+        kitFileName = f"get_{tagName}_kit"
+        with open(f"{ZOMBIE_KIT_PATH}{tagName}.mcfunction", 'w') as outfile:
+            if item[ZOMBIE_KIT_CSV_FILE_CHESTPLATE] != '':
+                outfile.write("#Put Chestplate on player\n")
+                outfile.write(f"{EXECUTE_AS_TARGET_COMMAND} item replace entity @s armor.chest with {item[ZOMBIE_KIT_CSV_FILE_CHESTPLATE]}\n\n")
+
+            for key in item.keys():
+                if key.__contains__("Item") and item[key] != '':
+                    outfile.write(f"#Give player a specific item\n")
+                    outfile.write(f"{EXECUTE_AS_TARGET_COMMAND} give @s {item[key]} {item['Quantity'+key.split('Item')[1]]}\n\n")
+
+        with open(f"{ZOMBIE_KIT_PATH}{kitFileName}.mcfunction", 'w') as outfile:
+            outfile.write("#Give player all zombie kit items\n")
+            outfile.write(f"{EXECUTE_AS_NEAREST_COMMAND} function {HVZ_CALL_FUNCTION_KIT_PATH}{allZombiesKit}\n\n")
+
+            outfile.write("#Give player kit gear\n")
+            outfile.write(f"{EXECUTE_AS_NEAREST_COMMAND} function {HVZ_CALL_FUNCTION_ZOMBIE_KIT_PATH}{tagName}\n\n")
 
     with open(f"{KIT_FILE_PATH}{allZombiesKit}.mcfunction", "w") as allZombieFile:
         allZombieFile.write("#Join Zombie Team\n")
