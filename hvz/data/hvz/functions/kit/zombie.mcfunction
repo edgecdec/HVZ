@@ -7,7 +7,7 @@ execute as @s run clear
 #Clear player effects
 execute as @s run effect clear @s
 
-Add 0 to score to make sure it exists
+#Add 0 to score to make sure it exists
 execute as @s run scoreboard players add @s PKilledAsZombie 0
 
 #Execute correct file based on tag
