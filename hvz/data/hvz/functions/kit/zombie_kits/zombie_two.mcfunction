@@ -5,7 +5,7 @@ execute as @s run item replace entity @s armor.head with zombie_head{Unbreakable
 execute as @s run item replace entity @s armor.chest with leather_chestplate{Unbreakable:1,display:{color:6192150,Name:'[{"text":"Zombie Armor","italic":false}]',Lore:['[{"text":"brains","italic":false}]']},AttributeModifiers:[{AttributeName:"generic.armor",Amount:0,Name:"generic.armor",UUID:[I;-122030,33560,2553,-67120]}],Enchantments:[{id:binding_curse,lvl:1},{id:vanishing_curse,lvl:1}],HideFlags:3}
 
 #Put Pants on player
-execute as @s run item replace entity @s armor.legs with leather_chestplate{Unbreakable:1,display:{color:6192150,Name:'[{"text":"Zombie Armor","italic":false}]',Lore:['[{"text":"brains","italic":false}]']},AttributeModifiers:[{AttributeName:"generic.armor",Amount:0,Name:"generic.armor",UUID:[I;-122030,33560,2553,-67120]}],Enchantments:[{id:binding_curse,lvl:1},{id:vanishing_curse,lvl:1}],HideFlags:3}
+execute as @s run item replace entity @s armor.legs with leather_leggings{Unbreakable:1,display:{color:6192150,Name:'[{"text":"Zombie Armor","italic":false}]',Lore:['[{"text":"brains","italic":false}]']},AttributeModifiers:[{AttributeName:"generic.armor",Amount:0,Name:"generic.armor",UUID:[I;-122030,32360,2553,-64720]}],Enchantments:[{id:binding_curse,lvl:1},{id:vanishing_curse,lvl:1}],HideFlags:3}
 
 #Put Boots on player
 execute as @s run item replace entity @s armor.feet with leather_boots{Unbreakable:1,display:{color:6192150,Name:'[{"text":"Zombie Armor","italic":false}]',Lore:['[{"text":"brains","italic":false}]']},AttributeModifiers:[{AttributeName:"generic.armor",Amount:0,Name:"generic.armor",UUID:[I;-122030,32360,2553,-64720]}],Enchantments:[{id:binding_curse,lvl:1},{id:vanishing_curse,lvl:1}],HideFlags:3}
