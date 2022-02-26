@@ -1,0 +1,3 @@
+#Give player a specific item
+execute as @s run give @s fire_charge{PublicBukkitValues: {"mweps:mweps": "Zombie-Fireball"},display:{Name:'[{"text":"Zombie Fireball","italic":false,"color":"dark_green"}]',Lore:['[{"text":"Right click to launch an explosive","italic":false}]','[{"text":"fireball. Fireballs deal high damage,","italic":false}]','[{"text":"but can be deflected back at you. Use","italic":false}]','[{"text":"with caution.","italic":false}]','[{"text":"Cooldown: 8 Seconds","italic":false,"color":"red"}]']},Enchantments:[{id:binding_curse,lvl:1},{id:vanishing_curse,lvl:1}],HideFlags:3} 4
+
