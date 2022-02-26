@@ -6,6 +6,7 @@ from HVZItemTemplates.Ammo import createAmmoString
 from HVZFileTemplates.ZombieSaturation import generateZombieSaturationFile
 from Util import zipDir
 from HumanKitGenerator import generateHumanKits
+from ZombieKitGenerator import generateZombieKits
 
 """
 RUN THIS FILE TO GENERATE THE HVZ DATAPACK!
@@ -93,6 +94,7 @@ with open(f"{KIT_FILE_PATH_OLD}remove_code_generated_tags_secondary.mcfunction",
 generateZombieSaturationFile()
 
 generateHumanKits()
+generateZombieKits()
 
 print("DONE!")
 
