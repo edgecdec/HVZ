@@ -14,4 +14,5 @@ tag @a remove cottage1
 tag @a remove cottage2
 tag @a remove cottage3
 tag @a remove cottage4
+tag @a remove iron_axe
 tag @a remove finished

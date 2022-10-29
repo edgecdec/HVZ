@@ -34,7 +34,11 @@ def generateItemsToFindFiles(itemDict):
             giveItemHeadCommand += f'{executeAsRunCommandPart} give @s player_head{{SkullOwner:{item["headPlayerName"]}}}\n\n'
 
         giveItemCommand = '# Found a treasure\n'
-        giveItemCommand += f'{executeAsRunCommandPart} give @s {itemName}\n\n'
+        itemNBT = item['nbt']
+        giveItemCommand += f'{executeAsRunCommandPart} give @s {itemName}'
+        if itemNBT != '':
+            giveItemCommand += itemNBT
+        giveItemCommand += '\n\n'
 
         soundCommand = '# Play sound to user indicating they have found an item\n'
         soundCommand += f'{executeAsRunCommandPart} playsound block.note_block.bell block @s ~ ~ ~ 5 0 1\n\n'
